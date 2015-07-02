@@ -1,0 +1,48 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion '20.0.0'
+
+    defaultConfig {
+        applicationId "com.example.wt.logindemo"
+        minSdkVersion 14
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    //为了解决部分第三方库重复打包了META-INF的问题
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    //avoscloud-push 与 Java-WebSocket 为推送与IM需要的包
+    //avoscloud-statistics 为 LeanCloud 统计包
+    //avoscloud-feedback 为 LeanCloud 用户反馈包
+    //avoscloud-sns 为 LeanCloud 第三方登陆包
+    //avoscloud-search 为 LeanCloud 应用内搜索包
+    compile 'cn.leancloud.android:avoscloud-sdk:v3.3.+'
+    compile 'cn.leancloud.android:avoscloud-push:v3.3.+@aar'
+    compile 'cn.leancloud.android:Java-WebSocket:1.2.0-leancloud'
+    compile 'cn.leancloud.android:avoscloud-statistics:v3.3.+@aar'
+    compile 'cn.leancloud.android:avoscloud-feedback:v3.3.+@aar'
+    compile 'cn.leancloud.android:avoscloud-sns:v3.3.+@aar'
+    compile 'cn.leancloud.android:qq-sdk:1.6.1-leancloud'
+    compile 'cn.leancloud.android:avoscloud-search:v3.3.+@aar'
+    compile 'com.google.android.gms:play-services:6.1.11'
+    compile 'com.android.support:appcompat-v7:21.0.0'
+}

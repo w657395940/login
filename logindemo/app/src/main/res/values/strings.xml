@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">logindemo</string>
+    <string name="username_prom">用户名:</string>
+    <string name="password_prom">密码:</string>
+    <string name="email">Email:</string>
+    <string name="login">登录</string>
+    <string name="signIn">注册</string>
+    <string name="forgetPassword">Forget Password</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_sign_in">SignIn</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_my_web">MyWeb</string>
+
+</resources>
